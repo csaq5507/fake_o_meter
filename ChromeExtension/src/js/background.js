@@ -25,7 +25,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse)
 function savetext(info,tab)
 {
     var jax = new XMLHttpRequest();
-    jax.open("POST","http://feldthurns.online:8080");
+    jax.open("POST","http://fakt.kalle.click");
     jax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     jax.send("text="+seltext);
     jax.onreadystatechange = function() { if(jax.readyState==4) {
@@ -37,5 +37,5 @@ var contexts = ["selection"];
 for (var i = 0; i < contexts.length; i++)
 {
     var context = contexts[i];
-    chrome.contextMenus.create({"title": "Send to Server", "contexts":[context], "onclick": savetext});
+    chrome.contextMenus.create({"title": "Is this fake-news?", "contexts":[context], "onclick": savetext});
 }

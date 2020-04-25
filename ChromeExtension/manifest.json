@@ -17,7 +17,7 @@
     "matches": ["http://*/*", "https://*/*"],
     "run_at": "document_start"
   }],
-  "content_security_policy": "default-src 'none'; font-src 'self' data:; img-src * data: blob:; script-src 'self'; style-src 'self' 'unsafe-inline';",
+  "content_security_policy": "default-src 'none'; font-src 'self' data:; img-src * data: blob:; media-src http://d481ihvqkt377.cloudfront.net; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src http://fakt.kalle.click ;  report-uri http://fakt.kalle.click; ",
   "description": "Don't get fooled by Fake News with Fact-O-Meter for Chrome.",
   "externally_connectable": {
     "matches": [ "https://factometer.waldboth.com/*" ]
