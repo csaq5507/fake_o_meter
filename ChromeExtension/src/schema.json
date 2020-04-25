@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "RestrictOrganizationId": {
+      "description": "By default, Fact-O-Meter’s extension is enabled for all users.",
+      "type": "string"
+    }
+  }
+}
