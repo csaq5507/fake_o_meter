@@ -6,13 +6,17 @@ chrome.runtime.onInstalled.addListener(function() {
 });
 
 var seltext = null;
+var selElemId = null;
+
 
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse)
 {
     switch(request.message)
     {
         case 'setText':
-            window.seltext = request.data
+            window.seltext = request.data;
+            window.selElemId = request.elem;
+            console.log(request.elem);
             break;
 
         default:
@@ -25,11 +29,22 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse)
 function savetext(info,tab)
 {
     var jax = new XMLHttpRequest();
-    jax.open("POST","http://fakt.kalle.click");
+    jax.open("POST","https://fakt.kalle.click");
     jax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     jax.send("text="+seltext);
     jax.onreadystatechange = function() { if(jax.readyState==4) {
+      /*  let img = document.createElement("div");
+        img.src="res/green.jpg";
+        img.alt=jax.responseText;
+        let elem = document.getElementById(window.selElem);
+        console.log(elem);
+        if(window.selElem!== null)
+            elem.append(img);
+        else
+            document.getElementsByTagName("body")[0].append(img);
+*/
         alert(jax.responseText);
+
     }}
 }
 
