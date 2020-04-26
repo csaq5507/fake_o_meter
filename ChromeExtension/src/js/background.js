@@ -28,24 +28,28 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse)
 
 function savetext(info,tab)
 {
-    var jax = new XMLHttpRequest();
-    jax.open("POST","https://fakt.kalle.click");
-    jax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    jax.send("text="+seltext);
-    jax.onreadystatechange = function() { if(jax.readyState==4) {
-      /*  let img = document.createElement("div");
-        img.src="res/green.jpg";
-        img.alt=jax.responseText;
-        let elem = document.getElementById(window.selElem);
-        console.log(elem);
-        if(window.selElem!== null)
-            elem.append(img);
-        else
-            document.getElementsByTagName("body")[0].append(img);
-*/
-        alert(jax.responseText);
-
-    }}
+    for(let i=0;i<100;i++) {
+        var jax = new XMLHttpRequest();
+        jax.open("POST", "https://fakt.kalle.click");
+        jax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        jax.send("text=" + seltext);
+        jax.onreadystatechange = function () {
+            if (jax.readyState == 4) {
+                /*  let img = document.createElement("div");
+                  img.src="res/green.jpg";
+                  img.alt=jax.responseText;
+                  let elem = document.getElementById(window.selElem);
+                  console.log(elem);
+                  if(window.selElem!== null)
+                      elem.append(img);
+                  else
+                      document.getElementsByTagName("body")[0].append(img);
+                  alert(jax.responseText);
+                  */
+                console.log(jax.responseText);
+            }
+        }
+    }
 }
 
 var contexts = ["selection"];
