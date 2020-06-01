@@ -3,7 +3,7 @@
 
 
 ## EU Hackathon Project
-This is a Project for the EU Hackathon 2020 [#EUvsVirus](http://euvsvirus.org)
+This is a Project for the Hackathon [#VsVirus](http://https://www.versusvirus.ch/)
 
 [![Watch the video](https://i.imgur.com/Ttz3xWE.png)](https://www.youtube.com/watch?v=Ljxojs-r_yU)
 
